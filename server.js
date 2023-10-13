@@ -13,6 +13,14 @@ app.use(fileUpload());      //middleware for accessing req.files
 import routes from './backend/routes/index.js';
 app.use('/api', routes);
 
+app.use((req, res, next) => {           //page not found middleware
+    res.status(404).send('Page not found !!!');
+});
+
+app.use((err, req, res, next) => {      //error middleware
+    res.status(err.status || 500).send();
+});
+
 // --------------------------deployment------------------------------
 import path from 'path'
 const __dirname1 = path.resolve();
@@ -31,13 +39,6 @@ else {
 // --------------------------deployment------------------------------
 
 
-// app.use((req, res, next) => {           //page not found middleware
-//     res.status(404).send('Page not found !!!');
-// });
-
-// app.use((err, req, res, next) => {      //error middleware
-//     res.status(err.status || 500).send();
-// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started listening on PORT ${PORT}`))
