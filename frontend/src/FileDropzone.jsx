@@ -15,8 +15,8 @@ import { CgAttachment } from "react-icons/cg";
 import axios from "axios";
 import UploadPreview from "./UploadPreview";
 
-// var API_URL = `http://localhost:5000/api/v1`;
-var API_URL = `https://mern-aws.onrender.com/api/v1`;
+var API_URL = `http://localhost:5000/api/v1`;
+// var API_URL = `https://mern-aws.onrender.com/api/v1`;
 
 const FileDropzone = () => {
     const [file, setFile] = useState(null);
