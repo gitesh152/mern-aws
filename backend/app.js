@@ -17,6 +17,23 @@ app.get('/', (req, res) => {
 import routes from './routes/index.js'; 
 app.use('/api', routes);
 
+// --------------------------deployment------------------------------
+import path from 'path'
+const __dirname1 = path.resolve();
+if (process.env.NODE_ENV === "production") {
+    app.use(Express.static(path.join(__dirname1, "/frontend/dist")));
+    app.get("*", (req, res) =>
+        res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"))
+    );
+}
+else {
+    app.get("/", (req, res) =>
+        res.send("API is running..")
+    );
+}
+// --------------------------deployment------------------------------
+
+
 app.use((req, res, next) => {           //page not found middleware
     res.status(404).send('Page not found !!!');
 });
