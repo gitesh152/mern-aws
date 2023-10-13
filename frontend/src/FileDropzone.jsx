@@ -15,7 +15,8 @@ import { CgAttachment } from "react-icons/cg";
 import axios from "axios";
 import UploadPreview from "./UploadPreview";
 
-var API_URL = `http://localhost:5000/api/v1`;
+// var API_URL = `http://localhost:5000/api/v1`;
+var API_URL = `http://ec2-3-110-148-151.ap-south-1.compute.amazonaws.com:5000/api/v1`;
 
 const FileDropzone = () => {
     const [file, setFile] = useState(null);

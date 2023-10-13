@@ -10,11 +10,7 @@ app.use(cors());
 import fileUpload from 'express-fileupload';
 app.use(fileUpload());      //middleware for accessing req.files
 
-app.get('/', (req, res) => {
-    res.status(200).send('API is running ...')
-});
-
-import routes from './routes/index.js';
+import routes from './backend/routes/index.js';
 app.use('/api', routes);
 
 // --------------------------deployment------------------------------

@@ -7,7 +7,7 @@
   </a>
 
   <p align="center">
-    A simple mern application deployed on AWS EC2, allow us to a video/mp4 file to s3 bucket and evoke aws lambda function to generate thumbnails.
+    A simple mern application deployed, allow us to a video/mp4 file to s3 bucket and evoke aws lambda function to generate thumbnails.
     <br />
     <br />
     <!-- <a target="_blank" href="https://mern-aws-qnvn.onrender.com/" >Live Preview</a> -->
@@ -59,8 +59,6 @@ This lambda function will also store s3 bucket files public urls to mongodb.
 User is also provided a clean and clear previews modal of uploaded video and generated thumbnails,
 
 alonghtwith their download urls.
-
-This whole project is deployed on AWS EC2 Instance.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
