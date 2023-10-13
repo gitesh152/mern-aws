@@ -20,7 +20,7 @@ app.use('/api', routes);
 // --------------------------deployment------------------------------
 import path from 'path'
 const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "prod") {
+if (process.env.NODE_ENV === "production") {
     console.log('Serving frontend...')
     app.use(Express.static(path.join(__dirname1, "/frontend/dist")));
     app.get("*", (req, res) =>
