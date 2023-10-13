@@ -21,6 +21,7 @@ app.use('/api', routes);
 import path from 'path'
 const __dirname1 = path.resolve();
 if (process.env.NODE_ENV === "production") {
+    console.log('Serving frontend...')
     app.use(Express.static(path.join(__dirname1, "/frontend/dist")));
     app.get("*", (req, res) =>
         res.sendFile(path.resolve(__dirname1, "frontend", "dist", "index.html"))
