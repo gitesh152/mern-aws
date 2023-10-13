@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
     res.status(200).send('API is running ...')
 });
 
-import routes from './routes/index.js'; 
+import routes from './routes/index.js';
 app.use('/api', routes);
 
 // --------------------------deployment------------------------------
