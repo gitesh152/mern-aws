@@ -41,6 +41,7 @@ router.get('/upload', async (req, res) => {
 
 router.post('/upload', async (req, res) => {
     try {
+        console.log('bahar')
         if (!req.files || !req.files.video) {
             return res.status(400).json({ message: 'No file uploaded' });
         }
@@ -54,6 +55,7 @@ router.post('/upload', async (req, res) => {
                 Key: videoFile.name,
                 Body: videoFile.data, // The file content
             };
+            console.log('video', req.files.video)
             // Upload the file to S3
             const uploadResult = await s3.upload(params).promise();
             // console.log('File uploaded to S3:', uploadResult.Location);
