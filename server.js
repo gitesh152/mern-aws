@@ -31,13 +31,13 @@ else {
 // --------------------------deployment------------------------------
 
 
-app.use((req, res, next) => {           //page not found middleware
-    res.status(404).send('Page not found !!!');
-});
+// app.use((req, res, next) => {           //page not found middleware
+//     res.status(404).send('Page not found !!!');
+// });
 
-app.use((err, req, res, next) => {      //error middleware
-    res.status(err.status || 500).send();
-});
+// app.use((err, req, res, next) => {      //error middleware
+//     res.status(err.status || 500).send();
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started listening on PORT ${PORT}`))
