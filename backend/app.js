@@ -14,13 +14,13 @@ app.get('/', (req, res) => {
     res.status(200).send('API is running ...')
 });
 
-import routes from './routes/index.js'; 
+import routes from './routes/index.js';
 app.use('/api', routes);
 
 // --------------------------deployment------------------------------
 import path from 'path'
 const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === "prod") {
     console.log('Serving frontend...')
     app.use(Express.static(path.join(__dirname1, "/frontend/dist")));
     app.get("*", (req, res) =>
